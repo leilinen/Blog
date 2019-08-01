@@ -1,9 +1,6 @@
 package com.java.gson;
 
-import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
+import com.google.gson.*;
 
 public class JsonSerialized {
 
@@ -40,6 +37,56 @@ public class JsonSerialized {
     }
 
     public static void main(String[] args) {
-        parsePersonJson(person);
+        // parsePersonJson(person);
+
+        String json1 = "{\"name\":\"tom\",\"salary\":2999}";
+        Gson gson1 = new Gson();
+
+        Iam i = gson1.fromJson(json1, Iam.class);
+        System.out.println(i.toString());
+    }
+}
+
+class Iam{
+    private String name;
+    private int age;
+    private String address;
+    private int salary;
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public void setSalary(int salary) {
+        this.salary = salary;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public String getAddress() {
+        return this.address;
+    }
+
+    public int getSalary() {
+        return salary;
+    }
+
+    @Override
+    public String toString() {
+        return "name: " + this.name + ", age: " + this.age + ", address: " + this.address + ", salary: " + this.salary;
     }
 }
