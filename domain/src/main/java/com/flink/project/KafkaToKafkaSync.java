@@ -2,7 +2,9 @@ package com.flink.project;
 
 import com.flink.util.KafkaPropertiesUtil;
 import org.apache.flink.streaming.api.TimeCharacteristic;
+import org.apache.flink.streaming.api.datastream.DataStreamSource;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
+import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer;
 
 import java.util.Properties;
 
@@ -19,6 +21,9 @@ public class KafkaToKafkaSync {
 
         Properties pros = KafkaPropertiesUtil.getProperties();
         // 消费kafka
+        DataStreamSource<String> source = env.addSource(new FlinkKafkaConsumer<>(pros));
+
+
 
     }
 }
