@@ -21,7 +21,7 @@ public class KafkaToKafkaSync {
 
         Properties pros = KafkaPropertiesUtil.getProperties();
         // 消费kafka
-        DataStreamSource<String> source = env.addSource(new FlinkKafkaConsumer<>(pros));
+        // DataStreamSource<String> source = env.addSource(new FlinkKafkaConsumer<>(pros));
 
 
 

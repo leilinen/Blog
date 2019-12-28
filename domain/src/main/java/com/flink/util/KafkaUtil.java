@@ -2,13 +2,12 @@ package com.flink.util;
 
 import com.alibaba.fastjson.JSON;
 import com.bean.Student;
-import org.apache.kafka.clients.producer.KafkaProducer;
-import org.apache.kafka.clients.producer.ProducerRecord;
 
 import java.util.Properties;
 
 public class KafkaUtil {
 
+    /*
     public static final String broker_list = "localhost:9092";
     public static final String topic = "student";
 
@@ -28,5 +27,7 @@ public class KafkaUtil {
         }
 
         // flush
-    }
+
+     */
+    //}
 }
