@@ -9,8 +9,8 @@
         <module name="domain" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="8">
-      <module name="domain" target="8" />
+    <bytecodeTargetLevel>
+      <module name="domain" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
