@@ -4,12 +4,22 @@
 // 引入相关的方法
 const { 
     override,
-    addLessLoader
+    addLessLoader,
+    fixBabelImports
 
 } = require('customize-cra')
 
+
+const modifyVars = require('./lessVars')
+
 module.exports = override(
     addLessLoader({
-        javascriptEnabled: true
+        javascriptEnabled: true,
+        modifyVars
+    }),
+    fixBabelImports('import', {
+        libraryName: 'antd',
+        librayrDirectory: 'es',
+        style: true
     })
 )
