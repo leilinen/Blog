@@ -6,7 +6,6 @@ import static com.java.althgriom.leetcode.SearchInsert.searchInsert;
 
 public class SearchInsertTest {
 
-    @org.junit.Test
     public void searchInsertTest() {
         int[] a1 = {1,3,5,6};
         int b1 = 5;
