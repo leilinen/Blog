@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 import { adminRouter } from './routes'
 
-import {Route, Switch} from 'react-router-dom'
+import {Route, Switch, Redirect} from 'react-router-dom'
 
 
 export default class App extends Component {
@@ -14,12 +14,18 @@ export default class App extends Component {
                     {
                         adminRouter.map(
                             route => {
-                                return <Route key={route.pathname} path={route.pathname} render={(routerProps) => {
-                                    return <route.component {...routerProps} />
+                                return <
+                                    Route key={route.pathname} 
+                                    path={route.pathname} 
+                                    exact={route.exact}
+                                    render={(routerProps) => {
+                                        return <route.component {...routerProps} />
                                 }}/>
                             }
                         )
                     }
+                    <Redirect to={adminRouter[0].pathname} from="/admin" exact />
+
                 </Switch>
             </div>
         )

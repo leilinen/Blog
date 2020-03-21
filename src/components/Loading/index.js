@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-export default function Loading() {
-    return (
-        <div>
-            loading...
-        </div>
-    )
+export default class Loading extends Component {
+    render() {
+        return(
+            <div>
+                loading...
+            </div>
+        )
+    }
 }

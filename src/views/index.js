@@ -1,5 +1,9 @@
-import loadable from 'react-loadable'
-import { Loading } from '../components/Loading'
+import Loadable from 'react-loadable';
+
+// this is a simple react loadable 
+// import Loadable from './loadable'
+import { Loading } from '../components'
+
 // import Dashboard from './Dashboard'
 // import Login from './Login'
 // import NotFound from './NotFound'
@@ -20,7 +24,7 @@ const NotFound = Loadable({
 })
 
 const Settings = Loadable({
-    loader: () => import('./Settingsd'),
+    loader: () => import('./Settings'),
     loading: Loading
 })
 
