@@ -1,6 +1,5 @@
 package com.java.althgriom.leetcode;
 
-import org.apache.commons.lang3.StringUtils;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -29,22 +28,35 @@ public class ValidBrackets {
 
     public boolean isValid(String s) {
         Stack<String> stack = new Stack<>();
-        char[] chars = s.toCharArray();
-        int limit = chars.length /2;
-        for (int i=0; i < limit; i++) {
-            stack.push(String.valueOf(chars[i]));
+        char[] chars = s.replace(" ", "").toCharArray();
+        boolean matched = false;
+        if (chars.length < 1) {
+            return true;
+        } else if (chars.length % 2 != 0) {
+            return false;
         }
 
-        for (int j=limit; j<chars.length; j++) {
-            if (!stack.empty()) {
-                String prepareMatch = stack.pop();
-                if (StringUtils.isBlank(prepareMatch)
-                        || StringUtils.isBlank(String.valueOf(chars[j]))) continue;
-                if (!match(prepareMatch, String.valueOf(chars[j])))  return false;
+        for (char c: chars) {
+            String e = String.valueOf(c);
+            if (stack.isEmpty()) {
+                stack.push(e);
+            } else {
+                String peek = stack.peek();
+                if (match(peek, e)) {
+                    stack.pop();
+                } else {
+                    stack.push(e);
+                }
+
             }
-        }
 
-        return true;
+        }
+        if (stack.isEmpty()) {
+            matched = true;
+        } else {
+            matched = false;
+        }
+        return matched;
     }
 
     /***
