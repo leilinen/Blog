@@ -9,11 +9,23 @@ public class DeleteNode {
 
     public static ListNode deleteNode(ListNode head, int val) {
 
-        ListNode p = head;
+        ListNode pre = head;
+        ListNode tail = head;
+        if (tail.val == val) {
+            return tail.next;
+        } else {
+            tail = tail.next;
+        }
 
+        while (tail != null && tail.val != val) {
+            pre = tail;
+            tail = pre.next;
+        }
 
+        if (tail != null) {
+            pre.next = tail.next;
+        }
 
         return head;
-
     }
 }
