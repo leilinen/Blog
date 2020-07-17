@@ -1,5 +1,7 @@
 package com.java.althgriom.offer;
 
+import java.util.PriorityQueue;
+
 /**
  * @Description:  输入整数数组 arr ，找出其中最小的 k 个数
  * @Author: leiline
@@ -9,36 +11,16 @@ public class GetLeastNumbers {
 
     public static int[] getLeastNumbers(int[] arr, int k) {
 
-        int[] ans = new int[k];
-        Integer ansMaxValue = Integer.MIN_VALUE;
-
-        for (int i=0; i<arr.length; i++) {
-            int value = arr[i];
-
-            if (value > ansMaxValue) {
-
-                if (i > k - 1) {
-                    // 替换数组中存放的最大值，
-                    replaceValue(ans, ansMaxValue, value);
-                }
-
-                value = ansMaxValue;
-            }
-
-            else {
-                ans[i] = value;
-            }
+        PriorityQueue<Integer> priorityQueue = new PriorityQueue<>(); // 默认实现
+        for (int i=0; i< arr.length; i++) {
+            priorityQueue.add(arr[i]);
         }
 
-        return ans;
-    }
+        int[] sortedNums = new int[k];
 
-    private static void replaceValue(int[] arr, int replaceValue, int replacedValue) {
-
-        for (int i=0; i<arr.length; i++) {
-            if (arr[i] == replacedValue) {
-                arr[i] = replaceValue;
-            }
+        for (int i=0; i< k; i++) {
+            sortedNums[i] = priorityQueue.poll();
         }
+        return sortedNums;
     }
 }
