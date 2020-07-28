@@ -1,28 +1,29 @@
-package com.java.althgriom;
+package com.java.althgriom.sort;
 
 /**
- * @Description: 快速排序
+ * @Description:
  * @Author: leiline
- * @CreateTime: 2020-06-29
+ * @CreateTime: 2020-07-28
  */
-public class QuickSort {
+public class QuickSort2 {
 
-    public static void sort(String[] a) {
+    public static void sort(Integer[] a) {
         sort(a, 0, a.length - 1);
     }
 
-    private static void sort(String[] a, int lo, int hi) {
+    private static void sort(Integer[] a, int lo, int hi) {
         if (hi <= lo) return;
         int j = partition(a, lo, hi);
         sort(a, lo, j-1);
         sort(a, j+1, hi);
     }
 
-    private static int partition(String[] a, int lo, int hi) {
+
+    private static int partition(Integer[] a, int lo, int hi) {
 
         // 将数组切分为 a[lo, i-1], a[i], a[i+1, hi]
         int i = lo, j = hi+1;
-        String v = a[lo];
+        Integer v = a[lo];
         while (true) {
             while (less(a[++i], v)) {  // 从左往右比较
                 if (i==hi) {
@@ -45,13 +46,13 @@ public class QuickSort {
         return j;
     }
 
-    private static void exch(String[] a, int i, int j) {
-        String temp = a[i];
+    private static void exch(Integer[] a, int i, int j) {
+        Integer temp = a[i];
         a[i] = a[j];
         a[j] = temp;
     }
 
-    private static boolean less(String a, String b) {
+    private static boolean less(Integer a, Integer b) {
         return a.compareTo(b) < 0;
     }
 }

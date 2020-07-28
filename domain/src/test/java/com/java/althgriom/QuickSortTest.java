@@ -1,8 +1,7 @@
 package com.java.althgriom;
 
+import com.java.althgriom.sort.QuickSort;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 /**
  * @Description:
