@@ -26,5 +26,7 @@ public class SameTreeTest {
         root2.right = right2;
 
         Assert.assertFalse(SameTree.isSameTree(root1, root2));
+
+        root1.equals(left1);
     }
 }
