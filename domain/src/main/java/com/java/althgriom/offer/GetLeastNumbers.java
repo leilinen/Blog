@@ -3,7 +3,10 @@ package com.java.althgriom.offer;
 import java.util.PriorityQueue;
 
 /**
- * @Description:  输入整数数组 arr ，找出其中最小的 k 个数
+ * @Description:  输入整数数组 arr ，找出其中最小的 k 个数,
+ *
+ * 堆排序，快速排序
+ *
  * @Author: leiline
  * @CreateTime: 2020-07-05
  */
