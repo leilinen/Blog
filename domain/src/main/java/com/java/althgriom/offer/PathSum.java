@@ -17,7 +17,7 @@ public class PathSum {
 
     public static List<List<Integer>> pathSum(TreeNode root, int sum) {
 
-       dfs(root, sum, 0, new ArrayList<>());
+       //dfs(root, sum, 0, new ArrayList<>());
        return ans;
     }
 
