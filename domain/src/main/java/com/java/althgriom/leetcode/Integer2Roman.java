@@ -1,6 +1,7 @@
 package com.java.althgriom.leetcode;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
@@ -27,6 +28,8 @@ import java.util.Set;
 public class Integer2Roman {
 
     private Map< Integer, String> integer2Roman = new HashMap<>();
+
+    Set<String> s1 = new HashSet<>();
 
     public Integer2Roman() {
         this.integer2Roman.put(1, "I");
